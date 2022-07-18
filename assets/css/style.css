@@ -295,7 +295,7 @@ h6 {
 }
 
 .navbar2 {
-  margin-right: -45px !important;
+  margin-right: -60px !important;
 }
 
 .navbar2 ul {
@@ -641,7 +641,7 @@ h6 {
   perspective: 2000px;
   flex-wrap: wrap;
   top: 0.5em;
-  margin-right: -45px;
+  margin-right: -60px;
 }
 
 #menu .menu-item {
@@ -1044,6 +1044,11 @@ h6 {
   opacity: 1;
 }
 
+.drop-child1:hover {
+  transition: all 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
 .drop-parent {
   list-style: none;
 }
@@ -1082,20 +1087,47 @@ h6 {
   list-style: none;
 }
 
+.drop-child1 {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s linear;
+  position: absolute;
+  top: -10px;
+  left: 100px;
+  background: white;
+  width: max-content;
+  z-index: 99999;
+  max-width: 200px;
+  padding: 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 12px;
+  list-style: none;
+}
 .drop-child li a {
   color: black;
 }
 
+.drop-child1 li a {
+  color: black;
+}
 .drop-child li a:hover {
   color: #106eea !important;
 }
 
+.drop-child1 li a:hover {
+  color: #106eea !important;
+}
 .drop-parent a:hover~.drop-child {
   transition: all 0.5s;
   visibility: visible;
   opacity: 1;
 }
 
+.drop-parent a:hover~.drop-child1 {
+  transition: all 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
 .product-text a {
   color: black !important;
 }
@@ -1164,6 +1196,19 @@ h6 {
 }
 
 .drop-child::after {
+  transition: bottom 0.25s ease-out, opacity 0.01s ease-out 0.01s;
+  opacity: 1;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  /* bottom: -5em; */
+  left: -20px;
+  top: 10px !important;
+  border-color: transparent black transparent transparent;
+  border-width: 10px;
+  border-style: solid;
+}
+.drop-child1::after {
   transition: bottom 0.25s ease-out, opacity 0.01s ease-out 0.01s;
   opacity: 1;
   content: "";
@@ -2032,6 +2077,11 @@ section {
 }
 
 .drop-child {
+  height: 15rem;
+  overflow-y: scroll;
+}
+
+.drop-child1 {
   height: 15rem;
   overflow-y: scroll;
 }
